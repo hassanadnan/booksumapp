@@ -50,7 +50,7 @@ def printOutput(output):
 
 #@st.cache(suppress_st_warning=True)
 def get_toc(file):
-    openai_api_key = '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'
+    openai_api_key = ''
     llm = ChatOpenAI(
 #     model_name="gpt-3.5-turbo", # Cheaper but less reliable
     model_name="gpt-3.5-turbo",
@@ -141,7 +141,7 @@ def get_chapter_summary(paragraphs):
     from langchain.chains.summarize import load_summarize_chain
     from langchain.text_splitter import RecursiveCharacterTextSplitter
     import os
-    openai_api_key = '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'
+    openai_api_key = ''
     llm = OpenAI(temperature=0, openai_api_key=openai_api_key)
     text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n"], chunk_size=10000, chunk_overlap=500)
     docs = text_splitter.create_documents([paragraphs])
